@@ -10,7 +10,10 @@ import multer from "multer";
 import { fileURLToPath } from "url";
 import authRoutes from "./routes/auth.js"
 import userRoutes from "./routes/users.js"
+import postRoutes from "./routes/posts.js"
 import {register} from "./controllers/auth.js"
+import {createPost} from "./controllers/posts.js"
+import {verifyToken} from "./middleware/auth.js"
 
 // Configurations
 dotenv.config();
@@ -44,10 +47,12 @@ const upload = multer({ storage });
 
 //routes
 app.post("/auth/register", upload.single("picture"), register);
+app.post("/posts", verifyToken, upload.single("picture", createPost))
 
 // routes
 app.use("/auth", authRoutes);
 app.use("/users", userRoutes);
+app.use("/posts", postRoutes)
 
 // Mongoose setup
 mongoose.connect(process.env.MONGO_URL)
