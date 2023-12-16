@@ -72,6 +72,7 @@ app.get('/', (request, response) => {
 app.listen(PORT, () => {
     console.log(`Server Port: ${PORT}`);
 
+//adding data one time
     // User.insertMany(users);
     // Post.insertMany(posts);
 });
