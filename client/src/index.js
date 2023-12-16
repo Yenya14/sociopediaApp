@@ -31,9 +31,9 @@ const store = configureStore({
       PAUSE,
       PERSIST,
       PURGE,
-      REGISTER]
+      REGISTER],
     },
-  })
+  }),
 })
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
