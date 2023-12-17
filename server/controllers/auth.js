@@ -5,6 +5,10 @@ import User from "../models/User.js"
 //register user
 export const register = async (req, res) => {
     try {
+        for(let bodyVal in req.body){
+            req.body[bodyVal] = req.body[bodyVal].trim()
+        }
+
         const {
             firstName,
             lastName,
@@ -44,7 +48,9 @@ export const register = async (req, res) => {
 export const login = async (req, res) => {
     try {
         const {email, password} = req.body;
+        console.log(JSON.stringify(req.body))
         const user = await User.findOne({email: email});
+        console.log(user)
         if(!user) return res.status(400).json({msg: "User does not exist."})
     
         const isMatch = await bcrypt.compare(password, user.password)

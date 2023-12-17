@@ -14,8 +14,8 @@ import postRoutes from "./routes/posts.js"
 import {register} from "./controllers/auth.js"
 import {createPost} from "./controllers/posts.js"
 import {verifyToken} from "./middleware/auth.js"
-import User from "./models/User.js"
-import Post from "./models/Post.js"
+// import User from "./models/User.js"
+// import Post from "./models/Post.js"
 import { users, posts } from "./data/index.js"
 
 // Configurations
@@ -55,7 +55,7 @@ app.post("/posts", verifyToken, upload.single("picture", createPost))
 // routes
 app.use("/auth", authRoutes);
 app.use("/users", userRoutes);
-app.use("/posts", postRoutes)
+app.use("/post", postRoutes)
 
 // Mongoose setup
 mongoose.connect(process.env.MONGO_URL)

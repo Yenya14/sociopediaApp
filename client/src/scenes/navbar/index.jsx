@@ -40,7 +40,7 @@ const Navbar = () => {
   const alt = theme.palette.background.alt;
 
   const fullName = user ? `${user.firstName} ${user.lastName}` : '';
-
+  
   return (
     <FlexBetween padding="1rem 6%" backgroundColor={alt}>
       <FlexBetween gap="1.75rem">
@@ -94,7 +94,6 @@ const Navbar = () => {
                 width: "150px",
                 borderRadius: "0.25rem",
                 p: "0.25rem 1rem",
-                //specific class name from mui
                 "& .MuiSvgIcon-root": {
                   pr: "0.25rem",
                   width: "3rem",

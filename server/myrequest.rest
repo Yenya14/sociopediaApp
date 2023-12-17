@@ -1,0 +1,83 @@
+## Register User
+POST http://localhost:3001/auth/register
+Content-Type: multipart/form-data; boundary=your_boundary
+
+--your_boundary
+Content-Disposition: form-data; name="firstName"
+
+Aditya
+
+--your_boundary
+Content-Disposition: form-data; name="lastName"
+
+Tuladhar
+
+--your_boundary
+Content-Disposition: form-data; name="username"
+
+AdityaTuladhar
+
+--your_boundary
+Content-Disposition: form-data; name="email"
+
+a.tuladhar@gmail.com
+
+--your_boundary
+Content-Disposition: form-data; name="password"
+
+admin@admin
+
+--your_boundary
+Content-Disposition: form-data; name="picture"; filename="example.jpg"
+Content-Type: image/jpeg
+
+@C:\Users\Dell\Desktop\Fellowship\sociopediaApp\server\public\assets\p11.jpeg
+--your_boundary--
+
+# Authentication Request
+###
+POST http://localhost:3001/auth/login
+Content-Type: application/json
+
+{
+  "email": "a.tuladhar@gmail.com",
+  "password": "admin@admin"
+}
+
+# # Posts Routes
+###
+## Get Feed Posts
+GET http://localhost:3001/post
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1N2YxZTMzNzc3OGYwMzcwMjNhMGFmOSIsImlhdCI6MTcwMjgyOTY2Nn0.LHj0OWcxMRYdGoiNVFVdZliEhD8RJMfOiuS7emQHX2U
+
+###
+## Get User Posts
+GET http://localhost:3001/post/657defbb09efd398a24444d1/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1N2YxZTMzNzc3OGYwMzcwMjNhMGFmOSIsImlhdCI6MTcwMjgyOTY2Nn0.LHj0OWcxMRYdGoiNVFVdZliEhD8RJMfOiuS7emQHX2U
+
+###
+## Like Post
+PATCH http://localhost:3001/post/657defbb09efd398a24444d7/like
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1N2YxZTMzNzc3OGYwMzcwMjNhMGFmOSIsImlhdCI6MTcwMjgyOTY2Nn0.LHj0OWcxMRYdGoiNVFVdZliEhD8RJMfOiuS7emQHX2U
+Content-Type: application/json
+
+{
+  "userId": "657defbb09efd398a24444d1"
+}
+
+# Users Routes
+###
+## Get User
+GET http://localhost:3001/users/657f1e337778f037023a0af9
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1N2YxZTMzNzc3OGYwMzcwMjNhMGFmOSIsImlhdCI6MTcwMjgyOTY2Nn0.LHj0OWcxMRYdGoiNVFVdZliEhD8RJMfOiuS7emQHX2U
+
+###
+## Get User Friends
+GET http://localhost:3001/users/657f1e337778f037023a0af9/friends
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1N2YxZTMzNzc3OGYwMzcwMjNhMGFmOSIsImlhdCI6MTcwMjgyOTY2Nn0.LHj0OWcxMRYdGoiNVFVdZliEhD8RJMfOiuS7emQHX2U
+
+###
+## Add/Remove Friend
+PATCH http://localhost:3001/users/657f1e337778f037023a0af9/657f1bc5f1923d2b15f61f6d
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1N2YxZTMzNzc3OGYwMzcwMjNhMGFmOSIsImlhdCI6MTcwMjgyOTY2Nn0.LHj0OWcxMRYdGoiNVFVdZliEhD8RJMfOiuS7emQHX2U
+
