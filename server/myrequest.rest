@@ -48,13 +48,12 @@ Content-Type: application/json
 ###
 ## Get Feed Posts
 GET http://localhost:3001/post
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1N2YxZTMzNzc3OGYwMzcwMjNhMGFmOSIsImlhdCI6MTcwMjgyOTY2Nn0.LHj0OWcxMRYdGoiNVFVdZliEhD8RJMfOiuS7emQHX2U
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1N2YxZTMzNzc3OGYwMzcwMjNhMGFmOSIsImlhdCI6MTcwMjg3OTg2NX0.FCs2e29F76Psu0jauzqq3pbdhbMmf2J0O8alsSx15uA
 
 ###
 ## Get User Posts
 GET http://localhost:3001/post/657defbb09efd398a24444d1/posts
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1N2YxZTMzNzc3OGYwMzcwMjNhMGFmOSIsImlhdCI6MTcwMjgyOTY2Nn0.LHj0OWcxMRYdGoiNVFVdZliEhD8RJMfOiuS7emQHX2U
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1N2YxZTMzNzc3OGYwMzcwMjNhMGFmOSIsImlhdCI6MTcwMjg3OTg2NX0.FCs2e29F76Psu0jauzqq3pbdhbMmf2J0O8alsSx15uA
 ###
 ## Like Post
 PATCH http://localhost:3001/post/657defbb09efd398a24444d7/like
